@@ -1,0 +1,9 @@
+C:\Users\forec\Pictures\Picaso-main\obj\Debug\Picaso.csprojAssemblyReference.cache
+C:\Users\forec\Pictures\Picaso-main\obj\Debug\paint_2._0.Form1.resources
+C:\Users\forec\Pictures\Picaso-main\obj\Debug\Picaso.csproj.GenerateResource.cache
+C:\Users\forec\Pictures\Picaso-main\obj\Debug\Picaso.csproj.CoreCompileInputs.cache
+C:\Users\forec\Pictures\Picaso-main\bin\Debug\Picaso.exe.config
+C:\Users\forec\Pictures\Picaso-main\bin\Debug\Picaso.exe
+C:\Users\forec\Pictures\Picaso-main\bin\Debug\Picaso.pdb
+C:\Users\forec\Pictures\Picaso-main\obj\Debug\Picaso.exe
+C:\Users\forec\Pictures\Picaso-main\obj\Debug\Picaso.pdb
