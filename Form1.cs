@@ -230,7 +230,7 @@ namespace paint_2._0
         {
             OpenFileDialog open = new OpenFileDialog();
             // image filters  
-            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp; *.png; *.obj)|*.jpg; *.jpeg; *.gif; *.bmp; *.png";
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp; *.png; *.obj)|*.jpg; *.jpeg; *.gif; *.bmp; *.png;*.ico";
             
             if (open.ShowDialog() == DialogResult.OK)
             {
