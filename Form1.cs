@@ -206,9 +206,12 @@ namespace paint_2._0
 
         private void button5_Click(object sender, EventArgs e)
         {
+            panel2.Hide();
             Bitmap bitmap = DrawControlToBitmap(panel1);
             bitmap.Save(textBox11.Text + ".bmp");
             System.Diagnostics.Process.Start(textBox11.Text + ".bmp");
+            panel2.Show();
+            
 
         }
 
