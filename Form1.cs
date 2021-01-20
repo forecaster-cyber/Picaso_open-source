@@ -1,13 +1,16 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using Microsoft.CSharp;
 
 
 namespace paint_2._0
@@ -21,7 +24,7 @@ namespace paint_2._0
         int y = -1;
         bool moving = false;
         Pen pen;
-        
+
 
 
 
@@ -35,26 +38,27 @@ namespace paint_2._0
             pen = new Pen(Color.Black, 5);
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             pen.StartCap = pen.EndCap = System.Drawing.Drawing2D.LineCap.Round;
-            
+
 
 
 
         }
 
-        
 
 
-        
+
+
 
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
             panel3.Hide();
-            
+
 
         }
 
-        
+
 
 
         private static Bitmap DrawControlToBitmap(Control control)
@@ -72,7 +76,7 @@ namespace paint_2._0
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            PictureBox p = (PictureBox)sender;
+            PictureBox p = (PictureBox) sender;
             pen.Color = p.BackColor;
         }
 
@@ -108,13 +112,14 @@ namespace paint_2._0
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            PictureBox p = (PictureBox)sender;
+            PictureBox p = (PictureBox) sender;
             pen.Color = p.BackColor;
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Do you want to Erase EVERYTHING!?", "T-800", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            if (MessageBox.Show("Do you want to Erase EVERYTHING!?", "T-800", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Information) == DialogResult.Yes)
             {
                 this.Refresh();
                 panel1.BackgroundImage = pictureBox7.Image;
@@ -125,13 +130,13 @@ namespace paint_2._0
 
         private void pictureBox7_Click(object sender, EventArgs e)
         {
-            PictureBox p = (PictureBox)sender;
+            PictureBox p = (PictureBox) sender;
             pen.Color = p.BackColor;
         }
 
         private void pictureBox8_Click(object sender, EventArgs e)
         {
-            PictureBox p = (PictureBox)sender;
+            PictureBox p = (PictureBox) sender;
             pen.Color = p.BackColor;
 
         }
@@ -148,7 +153,7 @@ namespace paint_2._0
 
         private void pictureBox9_Click(object sender, EventArgs e)
         {
-            PictureBox p = (PictureBox)sender;
+            PictureBox p = (PictureBox) sender;
             pen.Color = p.BackColor;
         }
 
@@ -165,7 +170,7 @@ namespace paint_2._0
         private void pictureBox10_Click(object sender, EventArgs e)
         {
 
-            PictureBox p = (PictureBox)sender;
+            PictureBox p = (PictureBox) sender;
             pictureBox10.BackColor = panel1.BackColor;
             pen.Color = p.BackColor;
 
@@ -187,7 +192,7 @@ namespace paint_2._0
         private void pictureBox11_Click(object sender, EventArgs e)
         {
             panel3.Show();
-            
+
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -211,13 +216,13 @@ namespace paint_2._0
             bitmap.Save(textBox11.Text + ".bmp");
             System.Diagnostics.Process.Start(textBox11.Text + ".bmp");
             panel2.Show();
-            
+
 
         }
 
         private void Form1_MouseMove(object sender, MouseEventArgs e)
         {
-            
+
 
         }
 
@@ -230,11 +235,12 @@ namespace paint_2._0
         {
             OpenFileDialog open = new OpenFileDialog();
             // image filters  
-            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp; *.png; *.ico)|*.jpg; *.jpeg; *.gif; *.bmp; *.png;*.ico";
-            
+            open.Filter =
+                "Image Files(*.jpg; *.jpeg; *.gif; *.bmp; *.png; *.ico)|*.jpg; *.jpeg; *.gif; *.bmp; *.png;*.ico";
+
             if (open.ShowDialog() == DialogResult.OK)
             {
-                 
+
                 Image newImage = Image.FromFile((open.FileName));
                 panel1.BackgroundImage = newImage;
 
@@ -257,14 +263,14 @@ namespace paint_2._0
 
         private void Form1_MouseClick(object sender, MouseEventArgs e)
         {
-            
+
         }
 
         private void pictureBox12_Click(object sender, EventArgs e)
         {
             panel3.Hide();
-            
-            
+
+
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -273,7 +279,7 @@ namespace paint_2._0
             float y25 = float.Parse(textBox7.Text);
             float h = float.Parse(textBox9.Text);
             float w = float.Parse(textBox8.Text);
-            g.DrawRectangle(pen, x25,y25,w,h);
+            g.DrawRectangle(pen, x25, y25, w, h);
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -297,7 +303,7 @@ namespace paint_2._0
             int y = MousePosition.Y;
             label9.Text = x.ToString();
             label10.Text = y.ToString();
-            
+
         }
 
 
@@ -307,8 +313,8 @@ namespace paint_2._0
             float i2 = float.Parse(textBox14.Text);
             float i3 = float.Parse(textBox13.Text);
             float i4 = float.Parse(textBox12.Text);
-            g.DrawEllipse(pen, i1,i2,i3,i4);
-            
+            g.DrawEllipse(pen, i1, i2, i3, i4);
+
         }
 
 
